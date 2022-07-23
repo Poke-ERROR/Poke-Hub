@@ -331,6 +331,15 @@ elseif game.PlaceId == 5956785391 or 6152116144 then
             end
         end
     end)
+
+    local MuzanTpButton = AutoSection:NewButton("TP To Muzan", "Teleports To Muzan", function()
+        local tween_s = game:service"TweenService";
+        local info = TweenInfo.new(15,Enum.EasingStyle.Quad);
+        local newCFrame = CFrame.new(game:GetService("Workspace").Muzan.SpawnPos.Value)
+        local tween = tween_s:Create(player.Character["HumanoidRootPart"],info,{CFrame = newCFrame});
+        tween:Play();
+    end)
+
 else local Window = Library.CreateLib("Poke's Hub | Game Not Supported!", colors) -- game not supported statement
 end
 
